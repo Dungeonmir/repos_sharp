@@ -1,0 +1,91 @@
+﻿<Page x:Class="session1_framework.SelectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:session1_framework"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1200"
+      Title="SelectPage">
+
+    
+    
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50" Width="1200">
+            <TextBox MinWidth="200" x:Name="searchBar" TextChanged="searchBar_TextChanged"></TextBox>
+            <ComboBox SelectedIndex="0" SelectionChanged="boxSort_SelectionChanged" x:Name="boxSort">
+                <ComboBoxItem>Сортировка</ComboBoxItem>
+                <ComboBoxItem>Сортировка по возрастанию</ComboBoxItem>
+                <ComboBoxItem>Сортировка по убыванию</ComboBoxItem>
+            </ComboBox>
+            <ComboBox SelectedIndex="0" x:Name="boxFilter" SelectionChanged="boxFilter_SelectionChanged">
+                <ComboBoxItem Content="Фильтрация"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <ListView x:Name="listView" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="600" Width="1200" HorizontalAlignment="Left">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="imageHolder" Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Margin="0,0,20,0">
+                            <Image.Source>
+                                <BitmapImage UriSource="{Binding fullImagePath}">
+                                    
+                                </BitmapImage>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Height="30"></TextBlock>
+                        <TextBlock Grid.Row="0" Grid.Column="2"  Text="{Binding AgentType.Title}" Height="30"></TextBlock>
+                        <TextBlock Grid.Row="1" Grid.Column="1"   Height="60">
+                                <Run Text="INN: "></Run>
+                                <Run Text=" "></Run>
+                                <Run Text="{Binding INN}"></Run>
+                        </TextBlock>
+                        <TextBlock Grid.Row="1" Grid.Column="2"  Height="60">
+                                <Run Text="КПП: "></Run>
+                                <Run Text=" "></Run>
+                                <Run Text="{Binding KPP}"></Run>
+                        </TextBlock>
+
+
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="1200">
+            <Button x:Name="btnBack" Click="btnBack_Click" BorderThickness="0" Background="Transparent" Width="30">
+                    &lt;
+                </Button>
+            <ListView Name="pageCounter" BorderThickness="0">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" >
+                        <Setter Property="Selector.Padding" Value="0"></Setter>
+                        <Setter Property="Focusable" Value="False"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    </Style>
+                    
+                </ListView.ItemContainerStyle>
+                    
+                </ListView>
+            <Button x:Name="btnNext" Click="btnNext_Click" BorderThickness="0" Background="Transparent" Width="30" >
+                    &gt;
+                </Button>
+          
+        </WrapPanel>
+    </StackPanel>
+</Page>

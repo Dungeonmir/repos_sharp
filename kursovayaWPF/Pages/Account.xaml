@@ -1,0 +1,37 @@
+﻿<Page x:Class="kursovayaWPF.Pages.Account"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kursovayaWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Account">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontFamily" Value="Century"/>
+        </Style>
+    </Page.Resources>
+    <StackPanel Margin="10,10,10,9.3">
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
+            <Button Content="Назад" x:Name="btnBack" Click="btnBack_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10"/>
+            <Button x:Name="btnEditUser" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnEditUser_Click" Margin="10,10,10,10">Редактировать</Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" Width="397" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFEA9F"/>
+                    <GradientStop Color="#FFFFF8DD" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock x:Name="textBlockName" />
+            <TextBlock x:Name="textBlockSurname" />
+            <TextBlock x:Name="textBlockFathersName"/>
+            <TextBlock x:Name="textBlockLogin" />
+            <TextBlock x:Name="textBlockRole" />
+            <TextBlock x:Name="textBlockEmail" />
+            <TextBlock x:Name="textBlockPhone" />
+        </StackPanel>
+    </StackPanel>
+</Page>

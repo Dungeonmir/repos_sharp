@@ -1,0 +1,62 @@
+﻿<Page x:Class="kursovayaWPF.Pages.Accounts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kursovayaWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="Accounts">
+    <Page.Resources>
+        <Style TargetType="ListView">
+            <Setter Property="FontFamily" Value="Century"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Page.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="btnBack" Click="btnBack_Click" Margin="10,0,10,0">Назад</Button>
+            <Button x:Name="btnAdd" Margin="10,0,10,0" Click="btnAddClick">Добавить</Button>
+        </StackPanel>
+        
+        <ListView x:Name="userList" Background="#FFEBC1" Height="600" ScrollViewer.VerticalScrollBarVisibility="Disabled" SelectionChanged="selected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10"  Width="1100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="Имя"/>
+                        <TextBlock Grid.Row="1" Text="Фамилия"/>
+                        <TextBlock Grid.Row="2" Text="Отчество"/>
+                        <TextBlock Grid.Row="3" Text="Логин"/>
+                        <TextBlock Grid.Row="4" Text="email"/>
+                        <TextBlock Grid.Row="5" Text="Роль"/>
+                        <TextBlock Grid.Row="6" Text="Телефон"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding name}"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding surname}"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding fathersName}"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding login}"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding email}"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding UserRole.roleName}"/>
+                        <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding phone}"/>
+
+
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Page>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="session1_framework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:session1_framework"
+        mc:Ignorable="d"
+        xmlns:s="clr-namespace:session1_framework.data"
+        Title="MainWindow" Height="720" Width="1280">
+    <StackPanel>
+        
+        <Frame x:Name="frame" Height="720" Width="1280">
+        </Frame>
+        
+        
+    </StackPanel>
+</Window>

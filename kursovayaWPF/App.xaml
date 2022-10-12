@@ -1,0 +1,48 @@
+﻿<Application x:Class="kursovayaWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:kursovayaWPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="Marginal" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Century"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="#FFEBC1"/>
+            <Setter Property="Foreground" Value="#8E3200"/>
+            <Setter Property="MinWidth" Value="180"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="Century"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="#FFEBC1"/>
+            <Setter Property="Foreground" Value="#8E3200"/>
+            <Setter Property="MinWidth" Value="180"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#8E3200"/>
+            <Setter Property="Foreground" Value="#FFEBC1"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="Century"/>
+            <Setter Property="MinWidth" Value="180"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFA40000"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Application.Resources>
+</Application>

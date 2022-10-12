@@ -1,0 +1,50 @@
+﻿<Page x:Class="CaffeApp.Pages.Insert.InsertItem"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CaffeApp.Pages.Insert"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InsertItem">
+    
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Stretch">
+            
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Id" Margin="0,0,0,10" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Название" Margin="0,0,0,10" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Цена" Margin="0,0,0,10" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Описание" Margin="0,0,0,10" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Количество" Margin="0,0,0,10" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Категория" Margin="0,0,0,10" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <TextBox x:Name="tboxId" Margin="0,0,0,10" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+            <TextBox x:Name="tboxName" Margin="0,0,0,10" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+            <TextBox x:Name="tboxPrice" Margin="0,0,0,10" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+            <RichTextBox x:Name="tboxrichDescription" Margin="0,0,0,10" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="60"></RichTextBox>
+            <TextBox x:Name="tboxAmount" Grid.Column="1" Margin="0,0,0,10" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+            <ComboBox x:Name="cmbboxCategory" Margin="0,0,0,10" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            </ComboBox>
+
+        </Grid>
+        <StackPanel Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <Button x:Name="btnInsert" Content="Сохранить" Margin="5" Click="btnInsert_Click"></Button>
+            <Button x:Name="btnCancel" Content="Отменить" Margin="5" Click="btnCancel_Click" ></Button>
+        </StackPanel>
+       
+    </StackPanel>
+    
+</Page>

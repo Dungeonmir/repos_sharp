@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfAppComObjects.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppComObjects"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Margin="5,5,5,5" Click="Button_Click" >Запуск excel</Button>
+        <TextBox x:Name="tbFormula" Grid.Row="1" Grid.ColumnSpan="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="6,0,6,0"/>
+        <Button Grid.Column="1" Content="Расчет" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Click="Button_Click_1"/>
+        <Button x:Name="wordOpener" Content="Запуск  word" Grid.Row="2" Margin="5,5,5,5" Click="wordOpener_Click" />
+    </Grid>
+</Window>
