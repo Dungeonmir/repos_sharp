@@ -1,0 +1,30 @@
+﻿<Page x:Class="UchebnayaPractika.Pages.AddNotePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPractika.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddNotePage">
+
+    <Grid Margin="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Тема записи" Style="{StaticResource styleTextLabel}"></TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="0" x:Name="TextBoxTitle" Margin="0,5,0,5" ></TextBox>
+
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Текст записи" Style="{StaticResource styleTextLabel}"></TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="TextBoxText" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
+
+        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"   x:Name="btnSave" Content="Сохранить" Click="btnSave_Click"  Style="{StaticResource styleBtn}" ></Button>
+    </Grid>
+</Page>

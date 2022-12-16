@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="681e1f1834454e93bb6e424fe3631bca" Name="Diagram1">
+        <EntityTypeShape EntityType="session2Model.Agent" Width="1.5" PointX="10.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.AgentType" Width="1.5" PointX="8" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.Company" Width="1.5" PointX="8" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.Director" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.Material" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.MaterialSupplier" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.MaterialType" Width="1.75" PointX="0.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.Supplier" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.SupplierType" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.UnitName" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="session2Model.User" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="session2Model.FK_Agent_AgentType" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_Agent_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_Company_Director" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_Material_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_Material_UnitName" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_MaterialSupplier_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_MaterialSupplier_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="session2Model.FK_Supplier_SupplierType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

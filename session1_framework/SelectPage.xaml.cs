@@ -23,21 +23,35 @@ namespace session1_framework
     {
         int currentPage = 1;
         int totalPages = 0;
-        List<Agent> currentList;
+        List<Agent> currentList = null;
+        List<String> agentType = null;
         int order = 0;
         public SelectPage()
         {
             InitializeComponent();
-            currentList =  getList();
+            currentList =  getAgentList();
+            agentType = getAgentTypeList();
+            updateAgentTypeFilter();
             updateList();
+            
 
         }
         
 
-        public List<Agent> getList()
+        public List<Agent> getAgentList()
         {
             var list = session1Entities.getContext().Agent.ToList();
             return list;
+        }
+        public List<String> getAgentTypeList()
+        {
+            List<AgentType> typeList = session1Entities.getContext().AgentType.ToList();
+            List<String> agentTypes = new List<String>();
+            foreach (AgentType agentType in typeList)
+            {
+                agentTypes.Add( agentType.Title);
+            }
+            return agentTypes;
         }
 
         public void changeOrder(int _order)
@@ -45,10 +59,28 @@ namespace session1_framework
             order = _order;
             updateList();
         }
+        public void updateAgentTypeFilter()
+        {
+            boxFilter.Items.Clear();
+            agentType.Insert(0, "Все типы");
+           
+            foreach (var item in agentType)
+            {
+                boxFilter.Items.Add(item);
+            }
+            boxFilter.SelectedIndex = 0;
+
+        }
         public void updateList()
         {
+           
+            currentList = getAgentList();
+            if (boxFilter.SelectedValue as String != "Все типы") 
+            {
+                currentList = (currentList.Where(item => item.AgentType.Title == (boxFilter.SelectedValue as String))).ToList();
+            }
             
-            currentList = getList();
+            //searchBar.Text = boxFilter.SelectedValue as String;
             if (order == 2)
             {
                 currentList = currentList.OrderByDescending(i => i.Title).ToList();
@@ -62,7 +94,7 @@ namespace session1_framework
                 currentList =  currentList.Where(i => i.Title.ToLower().Contains(searchBar.Text.ToLower())).ToList();
 
             }
-            totalPages = currentList.Count / 10;
+            totalPages = (int) Math.Ceiling(currentList.Count / 10.0);
             currentList = currentList.Where((x, index) => {
                 if (index < currentPage * 10 && index > (currentPage - 1) * 10)
                 {
@@ -154,6 +186,12 @@ namespace session1_framework
 
         private void boxFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (currentList!=null)
+            {
+                currentPage = 1;
+                updateList();
+            }
+            
 
         }
     }
